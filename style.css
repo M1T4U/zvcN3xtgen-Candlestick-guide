@@ -1,0 +1,143 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-handwriting {
+  font-family: 'Caveat', cursive;
+}
+
+@keyframes dark-bg-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.dark-bg {
+    background: linear-gradient(-45deg, #020617, #1e1b4b, #172554, #0c4a6e);
+    background-size: 400% 400%;
+    animation: dark-bg-animation 15s ease infinite;
+}
+
+
+/* Typewriter effect */
+.typewriter-heading {
+  overflow: hidden; /* Ensures the text is not revealed until the animation */
+  border-right: .1em solid #5eead4; /* The typewriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  width: 0;
+  animation: 
+    typing 2s steps(22, end) forwards, 
+    blink .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: #5eead4; }
+}
+
+/* Delayed fade-in for the rest of the content */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in-delayed-1, .fade-in-delayed-2, .fade-in-delayed-3 {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+.fade-in-delayed-1 {
+    animation-delay: 2.2s;
+}
+.fade-in-delayed-2 {
+    animation-delay: 2.6s;
+}
+.fade-in-delayed-3 {
+    animation-delay: 3.0s;
+}
+
+/* New page transition animation */
+@keyframes slide-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-slide-fade-in {
+    animation: slide-fade-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+
+/* Screen-reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Stunning UI Effects for Deployment */
+
+@keyframes gradient-text-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-text {
+  background: linear-gradient(90deg, #67e8f9, #22d3ee, #06b6d4, #818cf8, #a78bfa);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-text-animation 6s ease infinite;
+}
+
+@keyframes pulsing-glow-animation {
+  0% { box-shadow: 0 0 5px #06b6d4, 0 0 10px #06b6d4; }
+  50% { box-shadow: 0 0 15px #2dd4bf, 0 0 25px #2dd4bf; }
+  100% { box-shadow: 0 0 5px #06b6d4, 0 0 10px #06b6d4; }
+}
+
+.pulsing-glow {
+  border-radius: 2px;
+  animation: pulsing-glow-animation 2s infinite ease-in-out;
+}
+
+@keyframes gradient-border-animation {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 0deg;
+}
+
+.gradient-border {
+  border-image: conic-gradient(from var(--border-angle), #172554, #1e3a8a, #3b82f6, #1e3a8a, #172554) 1;
+  animation: gradient-border-animation 5s linear infinite;
+}
+
+/* Text shadow for depth */
+.text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.text-shadow-sm {
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
